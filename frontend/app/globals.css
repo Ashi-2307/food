@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: white;
+  font-family: 'Inter', sans-serif;
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2.5 rounded-xl font-bold hover:bg-primary-dark transition-all duration-300 active:scale-95 shadow-lg shadow-primary/20;
+  }
+  .card-shadow {
+    @apply shadow-[0_4px_12px_rgb(0,0,0,0.05)] hover:shadow-[0_12px_24px_rgb(0,0,0,0.08)] transition-all duration-500 rounded-2xl border border-gray-100;
+  }
+  .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+  .nav-link {
+    @apply text-gray-600 hover:text-primary font-medium transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all hover:after:w-full;
+  }
+}
